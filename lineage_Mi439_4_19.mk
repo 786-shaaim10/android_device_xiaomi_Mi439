@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Kernel
 TARGET_KERNEL_VERSION := 4.19
@@ -25,22 +25,27 @@ PRODUCT_PACKAGES += \
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
+# Matrixx
+MATRIXX_CHIPSET := Mi439
+MATRIXX_BATTERY := 5000mAh
+MATRIXX_DISPLAY := 720x1520
+MATRIXX_MAINTAINER := FARHAN•AFK
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_EXCLUDES_AUXIO := true
+TARGET_EXCLUDES_VIA := true
+ROM_FOLDER := lineage
+
+# Boot animaton
+TARGET_BOOT_ANIMATION_RES := 720
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Mi439_4_19
-PRODUCT_NAME := derp_Mi439_4_19
+PRODUCT_NAME := lineage_Mi439_4_19
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := SDM439
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
-
-
-ROM_FOLDER := derp
-TARGET_USES_PICO_GAPPS := true
-TARGET_NOT_USES_BLUR := true
-
-# Signing
--include vendor/lineage-priv/keys/keys.mk
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
