@@ -15,6 +15,13 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Kernel
 TARGET_KERNEL_VERSION := 4.9
 
+# Sakura stuff
+#SAKURA_OFFICIAL := true
+SAKURA_MAINTAINER := @shaaimofficial
+TARGET_BOOT_ANIMATION_RES := 720
+SAKURA_BUILD_TYPE := gapps
+
+
 # Inherit from Mi439 device
 $(call inherit-product, device/xiaomi/Mi439/device.mk)
 
