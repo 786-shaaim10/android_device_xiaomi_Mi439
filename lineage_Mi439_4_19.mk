@@ -25,6 +25,24 @@ PRODUCT_PACKAGES += \
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
+# Boot animation
+TARGET_SCREEN_WIDTH := 720
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
+
+TARGET_ENABLE_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := true
+#TARGET_SUPPORTS_CALL_RECORDING := true
+WITH_GMS := false 
+#TARGET_BUILD_PACKAGE := 3
+#TARGET_INCLUDE_MATLOG := true
+
+# Maintainer
+#ALPHA_BUILD_TYPE := Official
+ALPHA_MAINTAINER := shaaim
+
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Mi439_4_19
 PRODUCT_NAME := lineage_Mi439_4_19
@@ -34,7 +52,6 @@ PRODUCT_MODEL := SDM439
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
 ROM_FOLDER := lineage
-#WITH_GMS := false
 
 # Signing
 -include vendor/lineage-priv/keys/keys.mk
